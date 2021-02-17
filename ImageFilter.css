@@ -1,11 +1,31 @@
 body {
-  background-color: #FFDEAD;
+  background-image : url('bg.jpeg')
+}
+
+#title {
+  margin-left: 20px;
+  margin-top : 20px;
+  margin-bottom : 5px;
+  color : black; /*steelblue*/ 
 }
 
 #can1 {
   border : 1px solid lightgray;
-  height : 150pt;
+  height : 200pt;
+  width : 300pt;
+  background-color : white;
+}
+
+#finput {
+  font-size : 15pt;
+  color : black;
+  margin-left : 10pt;
   width : 200pt;
+  overflow : hidden;
+}
+
+#finput:hover {
+  background-color : pink;
 }
 
 .button {
@@ -13,8 +33,11 @@ body {
     border : none;
     color : white;
     text-align : center;
-    font-size : 10pt;
+    height : 25pt;
+    font-size : 15pt;
     border-radius: 5px;
+    margin-right : 20px;
+    margin-left : 15px;
 }
 
 .button:hover {
@@ -23,22 +46,35 @@ body {
     box-shadow: 0 12px 16px 0   rgba(0,0,0,0.24), 0 17px 50px 0   rgba(0,0,0,0.19);
 }
 
+
 #grayscale {
-  width : 60pt;
+  width : 80pt;
+
 }
 
 #red {
-  width : 30pt;
+  width : 50pt;
 }
 
 #blur {
-  width : 60pt;
+  width : 90pt;
 }
 
 #reset {
-  width : 70pt;
+  width : 100pt;
 }
 
 #clean {
-  width : 70pt;
+  width : 100pt;
+}
+
+.left{
+    float: left;
+    width: 500px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+.right{
+    overflow: hidden; 
 }

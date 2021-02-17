@@ -5,19 +5,26 @@
 	<script src="ImageFilter.js"> </script>
 	<link rel="stylesheet" type="text/css" href="ImageFilter.css">
 </head>
-<h1> Fliter Fun </h1>
-<canvas id="can1"> 
-</canvas>
-<h2>Load Image</h2>
-<input type="file" multuple="false" accept="image/*" id="finput" onchange="upload()">
-<h2>Choose Filter</h2>
-<input type="botton" id = "grayscale" class="button" value="Grayscale" onclick="doGray()">
-<input type="botton" id = "red" class="button" value="Red" onclick="doRed()">
-<br>
-<br>
-<input type="botton" id = "reset" class="button" value="Reset Image" onclick="resetImage()">
-<input type="botton" id = "blur" class="button" value="Blur Image" onclick="doBlur()">
-<br>
-<br>
-<input type="botton" id = "clean" class="button" value="Clean Image" onclick="cleanImage()">
-
+<body>
+<h1 id="title"> Fliter Fun </h1>
+<div class="parent">
+	<div class="left">
+		<canvas id="can1"> 
+		</canvas>
+	</div>
+	<div class="right">
+		<h2>Load Image</h2>
+		<input type="file" multuple="false" accept="image/*" id="finput" onchange="upload()">
+		<h2>Choose Filter</h2>
+		<input type="botton" id = "grayscale" class="button" value="Grayscale" onclick="doGray()">
+		<input type="botton" id = "red" class="button" value="Red" onclick="doRed()">
+		<br>
+		<br>
+		<input type="botton" id = "reset" class="button" value="Reset Image" onclick="resetImage()">
+		<input type="botton" id = "blur" class="button" value="Blur Image" onclick="doBlur()">
+		<br>
+		<br>
+		<input type="botton" id = "clean" class="button" value="Clean Image" onclick="cleanImage()">
+	</div>
+</div>
+</body>
