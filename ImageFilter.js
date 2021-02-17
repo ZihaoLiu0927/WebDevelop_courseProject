@@ -13,6 +13,7 @@ function upload() {
   redimg = new SimpleImage(finput);
   blurimg = new SimpleImage(finput);
   originimg.drawTo(canvas);
+  setInterval("getname()",1000);
 }
 
 function imageIsLoaded(image) {
@@ -147,4 +148,9 @@ function resetImage() {
     alert("Image not loaded");
     return
   }
+}
+
+function getname() {
+  var filename = $("#btn .file").val();
+  $("#filename").text(filename);
 }

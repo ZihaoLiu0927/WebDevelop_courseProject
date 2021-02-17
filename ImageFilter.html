@@ -3,6 +3,7 @@
 	<title> Image filtering tool </title>
 	<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"> </script>
 	<script src="ImageFilter.js"> </script>
+	<script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="ImageFilter.css">
 </head>
 <body>
@@ -14,7 +15,11 @@
 	</div>
 	<div class="right">
 		<h2>Load Image</h2>
-		<input type="file" multuple="false" accept="image/*" id="finput" onchange="upload()">
+		<div id="btn">
+			Choose File
+			<input type="file" id="finput" class="file" onchange="upload()">
+		</div>
+		<div id="filename"></div>
 		<h2>Choose Filter</h2>
 		<input type="botton" id = "grayscale" class="button" value="Grayscale" onclick="doGray()">
 		<input type="botton" id = "red" class="button" value="Red" onclick="doRed()">
