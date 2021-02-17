@@ -1,8 +1,8 @@
-# WebDevelop_courseProject
+# WebDevelop Course Project
 
-Programming Foundations with JavaScript, HTML and CSS (Duke University, coursera) course projects code records. 
+Programming Foundations with JavaScript, HTML and CSS (Coursera, by Duke University) course projects code records. 
 
-Course link (https://www.coursera.org/learn/duke-programming-web)
+Course website: https://www.coursera.org/learn/duke-programming-web
 
 Build a web tool that can be used to filter image. Types of filtering:
 
