@@ -86,22 +86,17 @@ function filterBlur() {
     if (rand > 0.5) {
       var x = px.getX();
       var y = px.getY();
-      var nearPixel = findNearbyPx(x, y, blurimg);
+      var nearPixel = findNearbyPx(x, y);
       px.setRed(nearPixel.getRed());
       px.setGreen(nearPixel.getGreen());
       px.setBlue(nearPixel.getBlue());
     } 
-    else {
-      px.setRed(255);
-      px.setGreen(255);
-      px.setBlue(255);
-    }
   }
 }
 
-function findNearbyPx(x , y, blurimg){
-  var width = blurimg.getWidth();
-  var height = blurimg.getWidth();
+function findNearbyPx(x, y){
+  var maxWidth = blurimg.getWidth();
+  var maxHeight = blurimg.getHeight();
   if (Math.random() < 0.5) {
     var direction = 1;
   }
@@ -110,16 +105,16 @@ function findNearbyPx(x , y, blurimg){
   }
   var randDistX = Math.floor(Math.random() * 11);
   var randDistY = Math.floor(Math.random() * 11);
-  var nearX = x - randDistX * direction;
-  var nearY = y - randDistY * direction;
-  if (nearX > width - 1) {
-    nearX = width -1;
+  var nearX = x + randDistX * direction;
+  var nearY = y + randDistY * direction;
+  if (nearX > maxWidth - 1) {
+    nearX = maxWidth -1;
   }
   if (nearX < 0) {
     nearX = 0
   }
-  if (nearY > height -1) {
-    nearY = height -1;
+  if (nearY > maxHeight - 1) {
+    nearY = maxHeight -1;
   }
   if (nearY < 0) {
     nearY = 0;
