@@ -1,0 +1,44 @@
+body {
+  background-color: #FFDEAD;
+}
+
+#can1 {
+  border : 1px solid lightgray;
+  height : 150pt;
+  width : 200pt;
+}
+
+.button {
+    background-color : #008CBA; /* Green */
+    border : none;
+    color : white;
+    text-align : center;
+    font-size : 10pt;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0   rgba(0,0,0,0.24), 0 17px 50px 0   rgba(0,0,0,0.19);
+}
+
+#grayscale {
+  width : 60pt;
+}
+
+#red {
+  width : 30pt;
+}
+
+#blur {
+  width : 60pt;
+}
+
+#reset {
+  width : 70pt;
+}
+
+#clean {
+  width : 70pt;
+}
