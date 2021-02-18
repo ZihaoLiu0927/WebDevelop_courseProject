@@ -12,6 +12,6 @@ Build a web tool that can be used to filter image. Types of filtering:
 
 3. Blur Filter 
 
-4. extra function: An Interactive Painter that can work on the uploaded image
+4. An extra function: An Interactive Painter that can work on the uploaded image
 
 
