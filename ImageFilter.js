@@ -1,13 +1,21 @@
-var originimg = null;
 var canvas = null;
+var context = null;
+var finput = null;
+
+var originimg = null;
 var grayimg = null;
 var redimg = null;
 var blurimg = null;
-var finput = null;
+
+var color = 'black';
+var radius = 50;
+var isPainting = false;
+
 
 function upload() {
   finput = document.getElementById("finput");
   canvas = document.getElementById("can1");
+  context = canvas.getContext("2d");
   originimg = new SimpleImage(finput);
   grayimg = new SimpleImage(finput);
   redimg = new SimpleImage(finput);
@@ -22,6 +30,10 @@ function imageIsLoaded(image) {
   }
   return true;
 }
+
+
+// *******************************
+// function for Grayscale filter
 
 function doGray() {
   if ( imageIsLoaded(originimg) ) {
@@ -42,6 +54,9 @@ function filterGray() {
       px.setBlue(avg);
     }
 }
+
+// *******************************
+// function for red filter
 
 function doRed() {
   if ( imageIsLoaded(originimg) ) {
@@ -69,6 +84,9 @@ function filterRed() {
     }
   }
 }
+
+// *******************************
+// function for blur filter
 
 function doBlur() {
   if ( imageIsLoaded(originimg) ) {
@@ -124,11 +142,13 @@ function findNearbyPx(x, y){
 }
 
 
+// ***************************************
+// clean the image
+
 function cleanImage() {
   if (canvas == null) {
     return;
   }
-  var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
   originimg = null;
   grayimg = null;
@@ -154,3 +174,44 @@ function getname() {
   var filename = $("#btn .file").val();
   $("#filename").text(filename);
 }
+
+
+// ****************************** 
+// function for painter
+
+function paintCircle (x, y) {
+    // make sure to start a new circle each time
+    context.beginPath();
+    // draw circle using a complete (2*PI) arc around given point
+    context.arc(x, y, radius, 0, Math.PI * 2, true);
+    context.fillStyle = color;
+    context.fill();
+}
+
+function startPaint() {
+  isPainting = true;
+}
+
+function endPaint() {
+  isPainting = false;
+}
+
+function doPaint(x, y) {
+  if(isPainting) {
+    var bbox = canvas.getBoundingClientRect();
+    paintCircle (x * (canvas.width / bbox.width), y * (canvas.height / bbox.height));
+  }
+}
+
+function changeColor(newColor) {
+  color = newColor;
+}
+
+function resizeBrush(newSize) {
+  radius = newSize;   
+  document.getElementById("sizeOutput").value = newSize;
+}
+
+
+
+
